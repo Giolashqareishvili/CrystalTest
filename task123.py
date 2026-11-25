@@ -118,3 +118,121 @@
 # length = get_length()
 # result = fibonacci(length)
 # print(f"ფიბონაჩის რიგი ({length} ელემენტი): {result}")
+
+#4 პალინდრომი
+# def clean_text(text):
+#   result = ""
+#   for ch in text.lower():
+#     if ch.isalnum():
+#       result += ch
+#   return result
+#
+# def is_palindrome(s):
+#   return len(s) > 0 and s == s[::-1]
+#
+# def suggest_palindrome(s):
+#   for i in range(len(s)):
+#     removed = s[:i] + s[i + 1 :]
+#     if is_palindrome(removed):
+#       return f"ერთი სიმბოლოს წაშლით ('{s[i]}'): {removed}"
+#
+#
+#   left = 0
+#   right = len(s) - 1
+#   while left < right:
+#     if s[left] != s[right]:
+#       insert_left = s[:left] + s[right] + s[left:]
+#       if is_palindrome(insert_left):
+#         return f"ერთი სიმბოლოს ჩასმით ('{s[right]}'): {insert_left}"
+#
+#       insert_right = s[: right + 1] + s[left] + s[right + 1 :]
+#       if is_palindrome(insert_right):
+#         return f"ერთი სიმბოლოს ჩასმით ('{s[left]}'): {insert_right}"
+#       break
+#     left += 1
+#     right -= 1
+#
+#   return "ერთი სიმბოლოს ჩასმით ან წაშლით პალინდრომი ვერ მიიღება."
+# while True:
+#   raw = input("შეიყვანე ტექსტი(არ გამოიყენო სიმბოლები): ")
+#
+#   if any(not ch.isalnum() for ch in raw):
+#     print("სიმბოლოს გამოყენება არ შეგიძლია! გამოიყენე მხოლოდ ასოები და ციფრები.")
+#     continue
+#   cleaned = clean_text(raw)
+#   if is_palindrome(cleaned):
+#     print(f"'{cleaned}' არის პალინდრომი!")
+#     break
+#   suggestion = suggest_palindrome(cleaned)
+#   print(f"'{cleaned}' არ არის პალინდრომი. შემოთავაზება — {suggestion}")
+
+
+#5 ზედმეტსახელების გენერატორი
+# while True:
+#   raw = input("შეიყვანე მხოლოდ ერთი სიტყვა: ").strip()
+#
+#   if not raw:
+#     print("ცარიელი ველი არ შეიძლება! შეიყვანე ერთი სიტყვა.")
+#     continue
+#
+#   if len(raw.split()) > 1:
+#     print("შეიყვანე მხოლოდ ერთი სიტყვა (ჰარების გარეშე)!")
+#     continue
+#
+#   if any(not ch.isalnum() for ch in raw):
+#     print("სიმბოლოს გამოყენება არ შეგიძლია! გამოიყენე მხოლოდ ასოები.")
+#     continue
+#
+#   if not raw.isalpha():
+#     print("რიცხვების გამოყენება არ შეიძლება! შეიყვანე მხოლოდ ერთი სიტყვა.")
+#     continue
+#
+#   word = raw.lower()
+#   break
+#
+# nicknames = [
+#     f"pro_{word}",
+#     f"{word}_x",
+#     f"the_{word}",
+#     f"{word}_99",
+#     f"{word}_{word[:2]}",
+# ]
+#
+# print(f"\nზედმეტსახელები სიტყვისთვის '{word}':")
+# for i, nick in enumerate(nicknames, start=1):
+#   print(f"{i}. {nick}")
+
+#6 დავალება
+# import random
+#
+# while True:
+#   parts = input("შეიყვანე რიცხვები გამოტოვებით: ").strip().split()
+#   if parts and all(
+#       p.isdigit() or (p.startswith("-") and p[1:].isdigit()) for p in parts
+#   ):
+#     nums = [int(p) for p in parts]
+#     break
+#   print("შეიყვანე მხოლოდ რიცხვები, თითო გამოტოვებით!")
+#
+# while True:
+#   print(
+#       "\nაირჩიე სორტირების წესი:\n1 - კლებადობით\n2 - ზრდადობით\n3 -"
+#       " random"
+#   )
+#   choice = input("შენი არჩევანი (1-3): ").strip()
+#
+#   if choice == "1":
+#     res = sorted(nums, reverse=True)
+#     break
+#   if choice == "2":
+#     res = sorted(nums)
+#     break
+#   if choice == "3":
+#     res = nums.copy()
+#     random.shuffle(res)
+#     break
+#
+#   print("არასწორი არჩევანია, შეიყვანე 1, 2, 3 ან 4.")
+#
+# print(f"შედეგი: {res}")
+
