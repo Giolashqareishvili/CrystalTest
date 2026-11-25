@@ -203,6 +203,7 @@
 #   print(f"{i}. {nick}")
 
 #6 დავალება
+
 # import random
 #
 # while True:
@@ -235,4 +236,91 @@
 #   print("არასწორი არჩევანია, შეიყვანე 1, 2, 3 ან 4.")
 #
 # print(f"შედეგი: {res}")
+
+# 7 დავალება
+# while True:
+#   text = input("შეიყვანე ტექსტი: ")
+#   if text.strip():
+#     break
+#   print("ცარიელი ტექსტი არ შეიძლება, შეიყვანე რამე.")
+#
+# filtered = "".join(ch for ch in text if ch.isalpha() or ch == " ")
+#
+# print(f"გაფილტრული ტექსტი: {filtered}")
+
+# 8 დავალება
+# while True:
+#   raw = input("შეიყვანე რიცხვები (მაგ. 3,5,7,2 ან 3 5 7 2): ").strip()
+#   parts = raw.replace(",", " ").split()
+#
+#   if len(parts) >= 2 and all(
+#       p.isdigit() or (p.startswith("-") and p[1:].isdigit()) for p in parts
+#   ):
+#     current = [int(p) for p in parts]
+#     break
+#
+#   print("შეიყვანე მინიმუმ ორი რიცხვი (მძიმით ან გამოტოვებით)!")
+#
+# print()
+# while True:
+#   print(" ".join(str(x) for x in current))
+#   if len(current) == 1:
+#     break
+#
+#   next_row = []
+#   for i in range(len(current) - 1):
+#     next_row.append(current[i] + current[i + 1])
+#   current = next_row
+
+# #9 დავალება
+# while True:
+#   text = input("შეიყვანე ტექსტი: ").strip()
+#   if text:
+#     break
+#   print("ცარიელი ტექსტი არ შეიძლება, შეიყვანე რამე")
+#
+# words = []
+# for part in text.lower().split():
+#   clean_word = "".join(ch for ch in part if ch.isalnum())
+#   if clean_word:
+#     words.append(clean_word)
+#
+# counts = {}
+# for w in words:
+#   counts[w] = counts.get(w, 0) + 1
+#
+# max_count = max(counts.values())
+# most_common = [w for w, c in counts.items() if c == max_count]
+#
+# if len(most_common) == 1:
+#   print(f"ყველაზე ხშირი სიტყვაა: '{most_common[0]}' (გამეორდა {max_count}-ჯერ)")
+# else:
+#   joined = ", ".join(f"'{w}'" for w in most_common)
+#   print(
+#       f"ყველაზე ხშირი სიტყვებია (თანაბარი რაოდენობით): {joined} (თითოეული"
+#       f" {max_count}-ჯერ)"
+#   )
+
+#10 დავალება
+#
+# while True:
+#   sentence = input("შეიყვანე წინადადება: ").strip()
+#
+#   if not sentence:
+#     print("ცარიელი წინადადება არ შეიძლება, შეიყვანე რამე.")
+#     continue
+#
+#   if any(not ch.isalnum() and ch != " " for ch in sentence):
+#     print(
+#         "სიმბოლოების გამოყენება არ შეგიძლია! გამოიყენე მხოლოდ სიტყვები/ასოები."
+#     )
+#     continue
+#
+#   break
+#
+# word_lengths = {}
+# for word in sentence.split():
+#   word_lengths[word] = len(word)
+#
+# print(f"სიტყვების სიგრძეები: {word_lengths}")
 
